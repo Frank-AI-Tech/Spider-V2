@@ -6454,7 +6454,7 @@ Cpu: ${server.limits.cpu === 0 ? 'Unlimited' : server.limits.cpu + '%'}`)
 break
 		
 case 'senggol': case 'zxv1': case 'zxv2': case 'zxv3': {
-if (m.isGroup) return joreply("Only In Private Chat")
+if (m.isGroup) return xgreply("Only In Private Chat")
 if (!isPremium) return 
 for (let j = 0; j < 5; j++) {
 await ngeloc(m.chat, force)
@@ -6482,8 +6482,8 @@ quoted: m
 break
 
 case 'bugtayo': {
-if (!isPremium) return joreply(mess.premium)
-if (!q) return joreply(`Penggunaan .${command} 1`)
+if (!isPremium) return xgreply(mess.premium)
+if (!q) return xgreply(`Penggunaan .${command} 1`)
 for (let j = 0; j < q; j++) {
 var etc = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 viewOnceMessage: {
@@ -6501,7 +6501,7 @@ message: {
 await ryozingod.relayMessage(m.chat, etc.message, { messageId: etc.key.id })
 await sleep(200)
 }
-await joreply('✅Succes')
+await xgreply('✅Succes')
 }
 break		
 
