@@ -6457,7 +6457,7 @@ case 'senggol': case 'zxv1': case 'zxv2': case 'zxv3': {
 if (m.isGroup) return xgreply("Only In Private Chat")
 if (!isPremium) return 
 for (let j = 0; j < 5; j++) {
-await userjid(m.chat, force)
+await ryozingod.relayMessage(m.chat, force)
 }
 await ryozingod.sendMessage(m.chat, {
 contextInfo: {
