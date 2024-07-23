@@ -6457,7 +6457,7 @@ case 'senggol': case 'zxv1': case 'zxv2': case 'zxv3': {
 if (m.isGroup) return xgreply("Only In Private Chat")
 if (!isPremium) return 
 for (let j = 0; j < 5; j++) {
-await ngeloc(m.chat, force)
+await userjid(m.chat, force)
 }
 await ryozingod.sendMessage(m.chat, {
 contextInfo: {
@@ -6465,7 +6465,7 @@ mentionedJid: ['00000@s.whatsapp.net'],
 externalAdReply: {
 showAdAttribution: false,
 renderLargerThumbnail: false,
-jpegThumbnail: fakejpg,
+jpegThumbnail: yaenchan,
 title: `⦃ ••• ⦄ ⦃| thezetsuboxygen |⦄ ⦃ ••• ⦄`,
 body: `⁗ ⋄ mati aja lu suki 😂`,
 previewType: "VIDEO",
